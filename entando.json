@@ -1,0 +1,16 @@
+{
+    "microservices": [],
+    "microfrontends": [
+        {
+            "name": "jeff-mfe",
+            "stack": "react"
+        },
+        {
+            "name": "another-mfe",
+            "stack": "react"
+        }
+    ],
+    "name": "jeff-bundle",
+    "version": "0.0.1",
+    "type": "bundle"
+}
