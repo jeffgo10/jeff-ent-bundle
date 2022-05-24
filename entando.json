@@ -1,5 +1,10 @@
 {
-    "microservices": [],
+    "microservices": [
+        {
+            "name": "my-service",
+            "stack": "spring-boot"
+        }
+    ],
     "microfrontends": [
         {
             "name": "jeff-mfe",
