@@ -25,5 +25,8 @@
     ],
     "name": "jeff-bundle",
     "version": "0.0.1",
-    "type": "bundle"
+    "type": "bundle",
+    "svc": [
+        "keycloak"
+    ]
 }
