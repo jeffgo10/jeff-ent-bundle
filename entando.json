@@ -8,7 +8,15 @@
     "microfrontends": [
         {
             "name": "jeff-mfe",
-            "stack": "react"
+            "stack": "react",
+            "apiClaims": [
+                {
+                    "name": "ext-api",
+                    "type": "external",
+                    "serviceId": "ms1",
+                    "bundleId": "anotherbundle"
+                }
+            ]
         },
         {
             "name": "another-mfe",
