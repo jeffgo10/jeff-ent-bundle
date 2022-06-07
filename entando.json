@@ -9,6 +9,11 @@
         {
             "name": "jeff-mfe",
             "stack": "react",
+            "group": "free",
+            "titles": {
+                "en": "This is Jeff MFE",
+                "it": "MFE di Jeff"
+            },
             "apiClaims": [
                 {
                     "name": "ext-api",
@@ -20,13 +25,20 @@
         },
         {
             "name": "another-mfe",
-            "stack": "react"
+            "stack": "react",
+            "group": "free",
+            "titles": {
+                "en": "Another MFE",
+                "it": "Un altro MFE"
+            }
         }
     ],
     "name": "jeff-bundle",
+    "description" : "This is an awesome bundle",
     "version": "0.0.1",
     "type": "bundle",
     "svc": [
+        "mysql",
         "keycloak"
     ]
 }
