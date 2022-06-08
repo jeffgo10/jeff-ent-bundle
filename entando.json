@@ -3,6 +3,10 @@
         {
             "name": "my-service",
             "stack": "spring-boot"
+        },
+        {
+            "name": "another-ms",
+            "stack": "spring-boot"
         }
     ],
     "microfrontends": [
@@ -34,7 +38,7 @@
         }
     ],
     "name": "jeff-bundle",
-    "description" : "This is an awesome bundle",
+    "description": "This is an awesome bundle",
     "version": "0.0.1",
     "type": "bundle",
     "svc": [
