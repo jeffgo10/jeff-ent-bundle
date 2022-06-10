@@ -13,6 +13,7 @@
         {
             "name": "jeff-mfe",
             "stack": "react",
+            "type": "app-builder",
             "group": "free",
             "titles": {
                 "en": "This is Jeff MFE",
@@ -25,11 +26,24 @@
                     "serviceId": "ms1",
                     "bundleId": "anotherbundle"
                 }
-            ]
+            ],
+            "nav": [
+                {
+                    "label": {
+                        "en": "Content Template",
+                        "it": "Content Template"
+                    },
+                    "target": "app-builder",
+                    "url": "/content-template"
+                }
+            ],
+            "slot": "content",
+            "paths": ["/content-template"]
         },
         {
             "name": "another-mfe",
             "stack": "react",
+            "type": "widget",
             "group": "free",
             "titles": {
                 "en": "Another MFE",
@@ -44,5 +58,17 @@
     "svc": [
         "mysql",
         "keycloak"
-    ]
+    ],
+    "global": {
+        "nav": [
+            {
+                "label": {
+                    "en": "Dashboard",
+                    "it": "Dashboard"
+                },
+                "target": "platform",
+                "url": "/dashboard"
+            }
+        ]
+    }
 }
