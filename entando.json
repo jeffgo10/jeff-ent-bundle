@@ -24,7 +24,9 @@
                     "name": "ext-api",
                     "type": "external",
                     "serviceId": "ms1",
-                    "bundleId": "anotherbundle"
+                    "bundleId": "anotherbundle",
+                    "serviceName": "ms1",
+                    "bundle": "registry.hub.docker.com/entando/example-qe-bundle-01"
                 }
             ],
             "nav": [
