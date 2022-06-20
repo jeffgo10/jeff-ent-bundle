@@ -50,7 +50,8 @@
             "titles": {
                 "en": "Another MFE",
                 "it": "Un altro MFE"
-            }
+            },
+            "contextParams": ["pageCode"]
         }
     ],
     "name": "jeff-bundle",
