@@ -12,6 +12,7 @@
     "microfrontends": [
         {
             "name": "jeff-mfe",
+            "customElement": "jeff-mfe",
             "stack": "react",
             "type": "app-builder",
             "group": "free",
@@ -23,8 +24,6 @@
                 {
                     "name": "ext-api",
                     "type": "external",
-                    "serviceId": "ms1",
-                    "bundleId": "anotherbundle",
                     "serviceName": "ms1",
                     "bundle": "registry.hub.docker.com/entando/example-qe-bundle-01"
                 }
@@ -44,6 +43,7 @@
         },
         {
             "name": "another-mfe",
+            "customElement": "another-mfe",
             "stack": "react",
             "type": "widget",
             "group": "free",
