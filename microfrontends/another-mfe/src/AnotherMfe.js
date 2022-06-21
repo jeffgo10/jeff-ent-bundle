@@ -1,13 +1,13 @@
 import logo from './logo.svg';
-import './App.css';
+import './AnotherMfe.css';
 
-function App() {
+function AnotherMfe() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          This is Another MFE in <code>src/AnotherMfe.js</code>.
         </p>
         <a
           className="App-link"
@@ -22,4 +22,4 @@ function App() {
   );
 }
 
-export default App;
+export default AnotherMfe;
