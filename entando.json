@@ -3,12 +3,12 @@
         {
             "name": "my-service",
             "stack": "spring-boot",
-            "healthCheckPath" : "/health"
+            "healthCheckPath": "/health"
         },
         {
             "name": "another-ms",
             "stack": "spring-boot",
-            "healthCheckPath" : "/health"
+            "healthCheckPath": "/health"
         }
     ],
     "microfrontends": [
@@ -33,7 +33,9 @@
                 }
             ],
             "slot": "content",
-            "paths": ["/content-template"]
+            "paths": [
+                "/content-template"
+            ]
         },
         {
             "name": "another-mfe",
@@ -45,7 +47,9 @@
                 "en": "Another MFE",
                 "it": "Un altro MFE"
             },
-            "contextParams": ["pageCode"],
+            "contextParams": [
+                "pageCode"
+            ],
             "apiClaims": [
                 {
                     "name": "ext-api",
