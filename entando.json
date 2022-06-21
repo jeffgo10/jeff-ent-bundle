@@ -2,11 +2,13 @@
     "microservices": [
         {
             "name": "my-service",
-            "stack": "spring-boot"
+            "stack": "spring-boot",
+            "healthCheckPath" : "/health"
         },
         {
             "name": "another-ms",
-            "stack": "spring-boot"
+            "stack": "spring-boot",
+            "healthCheckPath" : "/health"
         }
     ],
     "microfrontends": [
@@ -20,14 +22,6 @@
                 "en": "This is Jeff MFE",
                 "it": "MFE di Jeff"
             },
-            "apiClaims": [
-                {
-                    "name": "ext-api",
-                    "type": "external",
-                    "serviceName": "ms1",
-                    "bundle": "registry.hub.docker.com/entando/example-qe-bundle-01"
-                }
-            ],
             "nav": [
                 {
                     "label": {
@@ -51,7 +45,15 @@
                 "en": "Another MFE",
                 "it": "Un altro MFE"
             },
-            "contextParams": ["pageCode"]
+            "contextParams": ["pageCode"],
+            "apiClaims": [
+                {
+                    "name": "ext-api",
+                    "type": "external",
+                    "serviceName": "simple-ms",
+                    "bundle": "registry.hub.docker.com/cecchisandrone/entando-simple-bundle"
+                }
+            ]
         }
     ],
     "name": "jeff-bundle",
