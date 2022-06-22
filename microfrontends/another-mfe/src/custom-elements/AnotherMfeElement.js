@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import AnotherMfe from '../AnotherMfe';
 
 
@@ -11,10 +11,8 @@ class AnotherMfeElement extends HTMLElement {
   }
 
   render() {
-    ReactDOM.render(
-      <AnotherMfe />,
-      this.mountPoint
-    );
+    const root = createRoot(this.mountPoint);
+    root.render(<AnotherMfe />);
   }
 }
 
