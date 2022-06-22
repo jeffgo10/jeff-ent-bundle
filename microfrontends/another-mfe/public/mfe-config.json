@@ -1,7 +1,9 @@
 {
     "systemParams": {
         "api": {
-            "int-api": "http://localhost:8081",
+            "int-api": {
+                "url": "http://localhost:8081"
+            },
             "ext-api": {
                 "url": "http://mock-registry.hub.docker.com/cecchisandrone/entando-simple-bundle-simpleMs"
             }

@@ -1,10 +1,12 @@
 {
-    "api": {
-        "test": {
-            "url": "http://mock-registry.hub.docker.com/cecchisandrone/bigbundle-test"
-        },
-        "test2": {
-            "url": "http://mock-my.registry.com:5000/myorg/bigbundle-test"
+    "systemParams": {
+        "api": {
+            "test": {
+                "url": "http://mock-registry.hub.docker.com/cecchisandrone/bigbundle-test"
+            },
+            "test2": {
+                "url": "http://mock-my.registry.com:5000/myorg/bigbundle-test"
+            }
         }
     }
 }
