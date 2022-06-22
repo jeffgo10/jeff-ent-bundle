@@ -18,10 +18,6 @@
             "stack": "react",
             "type": "app-builder",
             "group": "free",
-            "titles": {
-                "en": "This is Jeff MFE",
-                "it": "MFE di Jeff"
-            },
             "nav": [
                 {
                     "label": {
