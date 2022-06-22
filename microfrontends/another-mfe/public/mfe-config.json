@@ -1,7 +1,10 @@
 {
-    "api": {
-        "ext-api": {
-            "url": "http://mock-registry.hub.docker.com/cecchisandrone/entando-simple-bundle-simpleMs"
+    "systemParams": {
+        "api": {
+            "int-api": "http://localhost:8081",
+            "ext-api": {
+                "url": "http://mock-registry.hub.docker.com/cecchisandrone/entando-simple-bundle-simpleMs"
+            }
         }
     }
 }
