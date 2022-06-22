@@ -52,6 +52,11 @@
             ],
             "apiClaims": [
                 {
+                    "name": "int-api",
+                    "type": "internal",
+                    "serviceName": "another-ms"
+                },
+                {
                     "name": "ext-api",
                     "type": "external",
                     "serviceName": "simple-ms",
