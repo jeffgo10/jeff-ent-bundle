@@ -5,7 +5,7 @@
                 "url": "http://localhost:8081"
             },
             "ext-api": {
-                "url": "http://test-fire.apps.mainline.eng-entando.com/cecchisandrone/simple-ms/"
+                "url": "http://test-fire.apps.mainline.eng-entando.com/cecchisandrone/simple-ms"
             }
         }
     }
