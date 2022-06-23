@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import logo from './logo.svg';
 import './AnotherMfe.css';
 
 const API_TIMESTAMP_PATH = '/api/timestamp'
@@ -46,6 +47,9 @@ function AnotherMfe({ config }) {
 
   return (
     <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+      </header>
       <button onClick={handleBtnClick}>Get timestamps</button>
       {internalTimestamp && (
         <>
