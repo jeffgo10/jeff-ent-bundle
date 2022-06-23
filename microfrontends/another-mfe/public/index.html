@@ -39,5 +39,17 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <script>
+      function injectConfigIntoMfe() {
+        fetch('%PUBLIC_URL%/mfe-config.json').then(async response => {
+          const config = await response.text()
+          const anotherMfeEl = document.getElementsByTagName('another-mfe')[0]
+          anotherMfeEl.setAttribute('config', config)
+        })
+      }
+
+      injectConfigIntoMfe()
+    </script>
   </body>
 </html>

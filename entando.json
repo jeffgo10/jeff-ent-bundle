@@ -44,9 +44,14 @@
                 "it": "Un altro MFE"
             },
             "contextParams": [
-                "pageCode"
+                "page_code"
             ],
             "apiClaims": [
+                {
+                    "name": "int-api",
+                    "type": "internal",
+                    "serviceName": "another-ms"
+                },
                 {
                     "name": "ext-api",
                     "type": "external",

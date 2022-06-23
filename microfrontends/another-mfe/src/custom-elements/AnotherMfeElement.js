@@ -1,7 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import AnotherMfe from '../AnotherMfe';
 
+const ATTRIBUTES = {
+  config: 'config'
+}
 
 class AnotherMfeElement extends HTMLElement {
   connectedCallback() {
@@ -10,11 +13,16 @@ class AnotherMfeElement extends HTMLElement {
     setTimeout(() => this.render(), 500);
   }
 
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (this.mountPoint && newValue !== oldValue) {
+      this.render();
+    }
+  }
+
   render() {
-    ReactDOM.render(
-      <AnotherMfe />,
-      this.mountPoint
-    );
+    const config = this.getAttribute(ATTRIBUTES.config) && JSON.parse(this.getAttribute(ATTRIBUTES.config));
+    const root = createRoot(this.mountPoint);
+    root.render(<AnotherMfe config={config} />);
   }
 }
 
