@@ -47,7 +47,7 @@
                 "it": "Un altro MFE"
             },
             "contextParams": [
-                "page.code"
+                "page_code"
             ],
             "apiClaims": [
                 {
