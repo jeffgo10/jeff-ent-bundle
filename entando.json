@@ -8,7 +8,10 @@
         {
             "name": "another-ms",
             "stack": "spring-boot",
-            "healthCheckPath": "/health"
+            "healthCheckPath": "/health",
+            "commands": {
+                "run": "mvn -Dspring-boot.run.arguments=\"--server.port=8082\" spring-boot:run"
+            }
         }
     ],
     "microfrontends": [
