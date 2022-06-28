@@ -49,6 +49,9 @@
             "contextParams": [
                 "page_code"
             ],
+            "commands": {
+                "run": "npm install && PORT=3001 npm start"
+            },
             "apiClaims": [
                 {
                     "name": "int-api",
