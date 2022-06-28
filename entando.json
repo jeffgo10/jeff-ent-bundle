@@ -82,7 +82,10 @@
             "customElement": "another-mfe-config",
             "stack": "react",
             "type": "widget-config",
-            "group": "free"
+            "group": "free",
+            "commands": {
+                "run": "npm install && PORT=3002 npm start"
+            }
         }
     ],
     "name": "jeff-bundle",
