@@ -5,7 +5,10 @@ import './AnotherMfe.css';
 const API_TIMESTAMP_PATH = '/api/timestamp'
 
 function AnotherMfe({ config }) {
-  const { api } = (config && config.systemParams) || {};
+  const { systemParams, contextParams, params } = config;
+  const { api } = systemParams || {};
+
+  const { username, description } = params;
 
   const internalApiUrl = api && api['int-api'].url;
   const externalApiUrl = api && api['ext-api'].url;
@@ -57,6 +60,23 @@ function AnotherMfe({ config }) {
           <div>External timestamp: {externalTimestamp}</div>
         </>
       )}
+      <br />
+      {
+        contextParams && (
+          <>
+            <div>Page Code: <strong>{contextParams['page.code']}</strong></div>
+          </>
+        )
+      }
+      <br />
+      {
+        params && (
+          <>
+            <div>Username: <strong>{username}</strong></div>
+            <div>Description <strong>{description}</strong></div>
+          </>
+        )
+      }
     </div>
   );
 }

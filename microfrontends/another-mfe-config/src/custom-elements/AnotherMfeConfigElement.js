@@ -1,12 +1,12 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import AnotherMfe from '../AnotherMfe';
+import AnotherMfeConfig from '../AnotherMfeConfig';
 
 const ATTRIBUTES = {
   config: 'config'
 }
 
-class AnotherMfeElement extends HTMLElement {
+class AnotherMfeConfigElement extends HTMLElement {
   static get observedAttributes() {
     return Object.values(ATTRIBUTES);
   }
@@ -18,7 +18,7 @@ class AnotherMfeElement extends HTMLElement {
   }
 
   attributeChangedCallback(attribute, oldValue, newValue) {
-    if (!AnotherMfeElement.observedAttributes.includes(attribute)) {
+    if (!AnotherMfeConfigElement.observedAttributes.includes(attribute)) {
       throw new Error(`Untracked changed attributes: ${attribute}`)
     }
     if (this.mountPoint && newValue !== oldValue) {
@@ -30,8 +30,8 @@ class AnotherMfeElement extends HTMLElement {
     const attributeConfig = this.getAttribute(ATTRIBUTES.config);
     const config = attributeConfig && JSON.parse(attributeConfig);
     const root = createRoot(this.mountPoint);
-    root.render(<AnotherMfe config={config} />);
+    root.render(<AnotherMfeConfig config={config} />);
   }
 }
 
-customElements.define('another-mfe', AnotherMfeElement);
+customElements.define('another-mfe-config', AnotherMfeConfigElement);

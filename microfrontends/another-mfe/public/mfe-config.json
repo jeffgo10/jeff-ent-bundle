@@ -8,5 +8,12 @@
                 "url": "http://test-fire.apps.mainline.eng-entando.com/cecchisandrone/simple-ms"
             }
         }
+    },
+    "contextParams": {
+        "page.code": "my_mfe_page"
+    },
+    "params": {
+        "username": "adionisi",
+        "description": "Tech Lead Entando"
     }
 }

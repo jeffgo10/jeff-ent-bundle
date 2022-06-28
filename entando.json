@@ -44,7 +44,7 @@
                 "it": "Un altro MFE"
             },
             "contextParams": [
-                "page_code"
+                "page.code"
             ],
             "apiClaims": [
                 {
@@ -58,7 +58,25 @@
                     "serviceName": "simple-ms",
                     "bundle": "registry.hub.docker.com/cecchisandrone/entando-simple-bundle"
                 }
-            ]
+            ],
+            "params": [
+                {
+                    "name": "username",
+                    "description": "username of user"
+                },
+                {
+                    "name": "description",
+                    "description": "description of user"
+                }
+            ],
+            "configMfe": "another-mfe-config"
+        },
+        {
+            "name": "another-mfe-config",
+            "customElement": "another-mfe-config",
+            "stack": "react",
+            "type": "widget-config",
+            "group": "free"
         }
     ],
     "name": "jeff-bundle",
