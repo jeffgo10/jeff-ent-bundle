@@ -7,6 +7,12 @@ const ATTRIBUTES = {
 }
 
 class AnotherMfeConfigElement extends HTMLElement {
+  constructor() {
+    super();
+    this.reactRootRef = React.createRef();
+    this.mountPoint = null;
+  }
+
   static get observedAttributes() {
     return Object.values(ATTRIBUTES);
   }
@@ -22,15 +28,19 @@ class AnotherMfeConfigElement extends HTMLElement {
       throw new Error(`Untracked changed attributes: ${attribute}`)
     }
     if (this.mountPoint && newValue !== oldValue) {
-      this.render();
+      setTimeout(() => {
+        this.reactRootRef.current.setState(JSON.parse(newValue));
+      }, 500);
     }
   }
 
+  get config() {
+    return this.reactRootRef.current ? this.reactRootRef.current.state : {};
+  }
+
   render() {
-    const attributeConfig = this.getAttribute(ATTRIBUTES.config);
-    const config = attributeConfig && JSON.parse(attributeConfig);
     const root = createRoot(this.mountPoint);
-    root.render(<AnotherMfeConfig config={config} />);
+    root.render(<AnotherMfeConfig ref={this.reactRootRef} />);
   }
 }
 
