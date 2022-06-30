@@ -34,7 +34,8 @@
             "slot": "content",
             "paths": [
                 "/content-template"
-            ]
+            ],
+            "apiClaims": []
         },
         {
             "name": "another-mfe",
