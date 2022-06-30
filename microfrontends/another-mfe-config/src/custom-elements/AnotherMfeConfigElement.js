@@ -30,13 +30,17 @@ class AnotherMfeConfigElement extends HTMLElement {
     }
     if (this.mountPoint && newValue !== oldValue) {
       setTimeout(() => {
-        this.reactRootRef.current.setState(JSON.parse(newValue));
+        this.config = JSON.parse(newValue);
       }, 500);
     }
   }
 
   get config() {
     return this.reactRootRef.current ? this.reactRootRef.current.state : {};
+  }
+
+  set config(value) {
+    return this.reactRootRef.current.setState(value);
   }
 
   render() {
