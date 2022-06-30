@@ -29,10 +29,12 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <script>
-      if (typeof window.entando === 'undefined') window.entando = {};
-      if (typeof window.entando.widgets === 'undefined') {
-        window.entando.widgets = {};
-      }
+      window.entando = {
+        ...(window.entando || {}),
+      };
+      window.entando.widgets = {
+        ...(window.entando.widgets || {}),
+      };
       window.entando.widgets['jeff-mfe'] = {
         basePath: "http://quickstart-entando.awsentando.net/entando-de-app/cmsresources/jeff-ent-bundle/jeff-mfe/"
       };
