@@ -1,6 +1,6 @@
 import './public-path';
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import AnotherMfeConfig from '../AnotherMfeConfig';
 class AnotherMfeConfigElement extends HTMLElement {
   constructor() {
@@ -24,8 +24,7 @@ class AnotherMfeConfigElement extends HTMLElement {
   }
 
   render() {
-    const root = createRoot(this.mountPoint);
-    root.render(<AnotherMfeConfig ref={this.reactRootRef} />);
+    ReactDOM.render(<AnotherMfeConfig ref={this.reactRootRef} />, this.mountPoint);
   }
 }
 
