@@ -10,7 +10,7 @@
         }
     },
     "contextParams": {
-        "page.code": "my_mfe_page"
+        "page_code": "my_mfe_page"
     },
     "params": {
         "username": "adionisi",

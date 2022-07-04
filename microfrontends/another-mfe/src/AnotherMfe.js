@@ -64,7 +64,7 @@ function AnotherMfe({ config }) {
       {
         contextParams && (
           <>
-            <div>Page Code: <strong>{contextParams['page.code']}</strong></div>
+            <div>Page Code: <strong>{contextParams.page_code}</strong></div>
           </>
         )
       }
