@@ -54,13 +54,12 @@
     <script>
       function injectConfigIntoMfe() {
         fetch('%PUBLIC_URL%/mfe-config.json').then(async response => {
-          const config = await response.text()
-          const anotherMfeEl = document.getElementsByTagName('another-mfe-config')[0]
-          anotherMfeEl.setAttribute('config', config)
+          const config = await response.json();
+          const anotherMfeEl = document.getElementsByTagName('another-mfe-config')[0];
+          anotherMfeEl.config = config;
         })
       }
-
-      injectConfigIntoMfe()
+      window.onload = () => injectConfigIntoMfe()
     </script>
   </body>
 </html>
