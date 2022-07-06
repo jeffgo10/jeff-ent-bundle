@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import logo from './react-logo.svg';
 import './AnotherMfe.css';
+import KeycloakContext from './KeycloakContext';
 
 const API_TIMESTAMP_PATH = '/api/timestamp'
 
@@ -16,9 +17,17 @@ function AnotherMfe({ config }) {
   const [internalTimestamp, setInternalTimestamp] = useState(null);
   const [externalTimestamp, setExternalTimestamp] = useState(null);
 
+  const keycloak = useContext(KeycloakContext);
+
   const fetchTimestamps = async () => {
+    const options = {
+      headers: {
+        Authorization: `Bearer ${keycloak.token}`
+      }
+    };
+
     try {
-      const internalApiResponse = await fetch(internalApiUrl + API_TIMESTAMP_PATH);
+      const internalApiResponse = await fetch(internalApiUrl + API_TIMESTAMP_PATH, options);
 
       if (internalApiResponse.ok) {
         setInternalTimestamp((await internalApiResponse.json())?.timestamp);
@@ -26,12 +35,12 @@ function AnotherMfe({ config }) {
         setInternalTimestamp('Server responded with an error');
       }
     } catch (error) {
-      setInternalTimestamp(error.message)
+      setInternalTimestamp(error.message);
     }
 
 
     try {
-      const externalApiResponse = await fetch(externalApiUrl + API_TIMESTAMP_PATH);
+      const externalApiResponse = await fetch(externalApiUrl + API_TIMESTAMP_PATH, options);
 
       if (externalApiResponse.ok) {
         setExternalTimestamp((await externalApiResponse.json())?.timestamp);
@@ -39,13 +48,13 @@ function AnotherMfe({ config }) {
         setExternalTimestamp('Server responded with an error');
       }
     } catch(error) {
-      setExternalTimestamp(error.message)
+      setExternalTimestamp(error.message);
     }
     
-  }
+  };
 
   const handleBtnClick = () => {
-    fetchTimestamps()
+    fetchTimestamps();
   };
 
   return (
