@@ -20,6 +20,11 @@ function AnotherMfe({ config }) {
   const keycloak = useContext(KeycloakContext);
 
   const fetchTimestamps = async () => {
+    if (keycloak.isTokenExpired()) {
+      keycloak.login();
+      return;
+    }
+
     const options = {
       headers: {
         Authorization: `Bearer ${keycloak.token}`
@@ -54,7 +59,7 @@ function AnotherMfe({ config }) {
   };
 
   const handleBtnClick = () => {
-    fetchTimestamps();
+    if (keycloak.authenticated) fetchTimestamps();
   };
 
   return (
