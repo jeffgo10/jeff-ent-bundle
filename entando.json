@@ -35,7 +35,13 @@
             "paths": [
                 "/content-template"
             ],
-            "apiClaims": []
+            "apiClaims": [
+                {
+                    "name": "int-api",
+                    "type": "internal",
+                    "serviceName": "my-service"
+                }
+            ]
         },
         {
             "name": "another-mfe",
@@ -91,7 +97,7 @@
     ],
     "name": "jeff-bundle",
     "description": "This is an awesome bundle",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "type": "bundle",
     "svc": [
         "mysql",
