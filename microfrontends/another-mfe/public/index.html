@@ -25,10 +25,42 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <script src="%REACT_APP_KEYCLOAK_URL%/js/keycloak.js"></script>
     <script>
+      const onLoad = (function() {
+        function createKcDispatcher(payload) {
+          return () => window.dispatchEvent(new CustomEvent('keycloak', { detail: payload }));
+        }
+
+        function initKeycloak() {
+          const keycloak = Keycloak({
+            url: '%REACT_APP_KEYCLOAK_URL%',
+            realm: '%REACT_APP_KEYCLOAK_REALM%',
+            clientId: '%REACT_APP_KEYCLOAK_CLIENT_ID%',
+          });
+
+          keycloak.onReady = createKcDispatcher({ eventType: 'onReady' });
+          keycloak.onAuthSuccess = createKcDispatcher({ eventType: 'onAuthSuccess' });
+          keycloak.onAuthError = createKcDispatcher({ eventType: 'onAuthError' });
+          keycloak.onAuthRefreshSuccess = createKcDispatcher({ eventType: 'onAuthRefreshSuccess' });
+          keycloak.onAuthRefreshError = createKcDispatcher({ eventType: 'onAuthRefreshError' });
+          keycloak.onAuthLogout = createKcDispatcher({ eventType: 'onAuthLogout' });
+          keycloak.onTokenExpired = createKcDispatcher({ eventType: 'onTokenExpired' });
+          const onInit = createKcDispatcher({ eventType: 'onInit' });
+
+          window.entando = {
+            ...(window.entando || {}),
+            keycloak,
+          };
+          window.entando.keycloak
+            .init({ onLoad: 'login-required' })
+            .success(onInit);
+        }
+
+        return initKeycloak;
+      })();
+
       window.entando = {
         ...(window.entando || {}),
       };
@@ -39,6 +71,9 @@
         basePath: "http://quickstart-entando.awsentando.net/entando-de-app/cmsresources/jeff-ent-bundle/another-mfe/"
       };
     </script>
+  </head>
+  <body onLoad="onLoad();">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <another-mfe></another-mfe>
     <!--
       This HTML file is a template.
