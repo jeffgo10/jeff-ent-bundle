@@ -18,7 +18,10 @@ const ATTRIBUTES = {
 };
 
 class AnotherMfeElement extends HTMLElement {
-  keycloak = getKeycloakInstance()
+  mountPoint;
+  root;
+
+  keycloak = getKeycloakInstance();
 
   constructor() {
     super();
@@ -33,6 +36,7 @@ class AnotherMfeElement extends HTMLElement {
   connectedCallback() {
     this.mountPoint = document.createElement('div');
     this.appendChild(this.mountPoint);
+    this.root = createRoot(this.mountPoint);
 
     this.keycloak = { ...getKeycloakInstance(), initialized: true };
 
@@ -62,8 +66,8 @@ class AnotherMfeElement extends HTMLElement {
   render() {
     const attributeConfig = this.getAttribute(ATTRIBUTES.config);
     const config = attributeConfig && JSON.parse(attributeConfig);
-    const root = createRoot(this.mountPoint);
-    root.render(
+
+    this.root.render(
       <KeycloakContext.Provider value={this.keycloak}>
         <AnotherMfe config={config} />
       </KeycloakContext.Provider>

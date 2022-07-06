@@ -6,10 +6,10 @@ import KeycloakContext from './KeycloakContext';
 const API_TIMESTAMP_PATH = '/api/timestamp'
 
 function AnotherMfe({ config }) {
-  const { systemParams, contextParams, params } = config;
+  const { systemParams, contextParams, params } = config || {};
   const { api } = systemParams || {};
 
-  const { username, description } = params;
+  const { username, description } = params || {};
 
   const internalApiUrl = api && api['int-api'].url;
   const externalApiUrl = api && api['ext-api'].url;
