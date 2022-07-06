@@ -2,7 +2,7 @@
     "systemParams": {
         "api": {
             "int-api": {
-                "url": "http://localhost:8081"
+                "url": "http://localhost:8082"
             },
             "ext-api": {
                 "url": "http://test-fire.apps.mainline.eng-entando.com/cecchisandrone/simple-ms"

@@ -1,5 +1,9 @@
 {
     "systemParams": {
-        "api": {}
+        "api": {
+            "int-api": {
+                "url": "http://localhost:8081"
+            }
+        }
     }
 }
