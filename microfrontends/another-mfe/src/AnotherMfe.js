@@ -20,11 +20,6 @@ function AnotherMfe({ config }) {
   const keycloak = useContext(KeycloakContext);
 
   const fetchTimestamps = async () => {
-    if (keycloak.isTokenExpired()) {
-      keycloak.login();
-      return;
-    }
-
     const options = {
       headers: {
         Authorization: `Bearer ${keycloak.token}`
@@ -58,16 +53,26 @@ function AnotherMfe({ config }) {
     
   };
 
-  const handleBtnClick = () => {
-    if (keycloak.authenticated) fetchTimestamps();
+  const handleGetTimestampsClick = () => {
+    if (keycloak.authenticated) {
+      if (keycloak.isTokenExpired()) {
+        keycloak.login();
+      } else {
+        fetchTimestamps();
+      }
+    }
   };
+
+  const handleLogoutClick = () => {
+    keycloak.logout();
+  }
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <button onClick={handleBtnClick}>Get timestamps</button>
+      <button onClick={handleGetTimestampsClick}>Get timestamps</button>
       {internalTimestamp && (
         <>
           <div>Internal timestamp: {internalTimestamp}</div>
@@ -89,6 +94,12 @@ function AnotherMfe({ config }) {
             <div>Username: <strong>{username}</strong></div>
             <div>Description <strong>{description}</strong></div>
           </>
+        )
+      }
+      <br />
+      {
+        process.env.NODE_ENV === 'development' && keycloak.authenticated && (
+          <button onClick={handleLogoutClick}>Log out</button>
         )
       }
     </div>
