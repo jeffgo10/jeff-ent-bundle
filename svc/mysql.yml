@@ -4,6 +4,7 @@ version: '3.7'
 services:
   mysql:
     image: mysql:8.0.26
+    restart: always
     # If you want to relocate the mysql data (volume) to your local directory, uncomment the lines below
     # volumes:
     #   - ~/volumes/entando-bundle-cli/jeff-ent-bundle/mysql/:/var/lib/mysql/
