@@ -80,3 +80,18 @@ test('displays username and description', async () => {
   expect(screen.getByText(new RegExp(config.params.username))).toBeInTheDocument();
   expect(screen.getByText(new RegExp(config.params.description))).toBeInTheDocument();
 });
+
+test('invokes keycloak login when button is clicked and token is expired', async () => {
+  keycloak.isTokenExpired.mockImplementationOnce(() => true)
+
+  render(
+    <KeycloakContext.Provider value={keycloak}>
+      <AnotherMfe config={{}} />
+    </KeycloakContext.Provider>
+  );
+
+  const getTimestampsBtnEl = screen.getByText(/Get timestamps/i);
+  userEvent.click(getTimestampsBtnEl);
+
+  expect(keycloak.login).toHaveBeenCalled()
+});
