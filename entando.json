@@ -98,7 +98,7 @@
     ],
     "name": "jeff-bundle",
     "description": "This is an awesome bundle",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "type": "bundle",
     "svc": [
         "mysql",
