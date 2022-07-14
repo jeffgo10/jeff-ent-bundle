@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
+import logo from './react-logo.svg';
 import './AnotherMfe.css';
 import KeycloakContext from './KeycloakContext';
-import ReactLogo from './ReactLogo';
 
 const API_TIMESTAMP_PATH = '/api/timestamp'
 
@@ -70,7 +70,7 @@ function AnotherMfe({ config }) {
   return (
     <div className="App">
       <header className="App-header">
-        <ReactLogo className="App-logo" />
+        <img src={logo} className="App-logo" alt="logo" />
       </header>
       <button onClick={handleGetTimestampsClick}>Get timestamps</button>
       {internalTimestamp && (
