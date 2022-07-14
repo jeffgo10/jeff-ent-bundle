@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './react-logo.svg';
 import './AnotherMfeConfig.css';
+import ReactLogo from './ReactLogo';
 
 class AnotherMfeConfig extends React.Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class AnotherMfeConfig extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <ReactLogo className="App-logo" />
           MFE Form
         </header>
           <div><label htmlFor="username">Username:</label> <input id="username" name="username" onChange={e => this.handleChangeUsername(e.target.value)} defaultValue={username} /></div>
