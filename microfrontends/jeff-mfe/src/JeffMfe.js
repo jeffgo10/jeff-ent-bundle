@@ -1,11 +1,11 @@
-import logo from './logo.svg';
 import './JeffMfe.css';
+import ReactLogo from './ReactLogo';
 
 function JeffMfe() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <ReactLogo className="App-logo" />
         <p>
           This is Jeff MFE in <code>src/JeffMfe.js</code>.
         </p>
