@@ -70,7 +70,7 @@
                     "name": "ext-api",
                     "type": "external",
                     "serviceName": "simple-ms",
-                    "bundle": "registry.hub.docker.com/cecchisandrone/entando-simple-bundle"
+                    "bundle": "registry.hub.docker.com/soniaent/entando-simple-bundle"
                 }
             ],
             "params": [
@@ -98,7 +98,7 @@
     ],
     "name": "jeff-bundle",
     "description": "This is an awesome bundle",
-    "version": "0.0.4",
+    "version": "0.0.6",
     "type": "bundle",
     "svc": [
         "mysql",
@@ -108,11 +108,11 @@
         "nav": [
             {
                 "label": {
-                    "en": "Dashboard",
-                    "it": "Dashboard"
+                    "en": "Entando Developers",
+                    "it": "Entando Developers"
                 },
-                "target": "platform",
-                "url": "/dashboard"
+                "target": "external",
+                "url": "https://developer.entando.com/"
             }
         ]
     }
