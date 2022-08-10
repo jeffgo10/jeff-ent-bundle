@@ -28,7 +28,7 @@
                         "en": "Content Template",
                         "it": "Content Template"
                     },
-                    "target": "app-builder",
+                    "target": "external",
                     "url": "/content-template"
                 }
             ],
