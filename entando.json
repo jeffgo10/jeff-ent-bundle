@@ -28,7 +28,7 @@
                         "en": "Content Template",
                         "it": "Content Template"
                     },
-                    "target": "external",
+                    "target": "internal",
                     "url": "/content-template"
                 }
             ],
